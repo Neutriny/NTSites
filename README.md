@@ -1,49 +1,19 @@
-# Starlight Starter Kit: Basics
+# NTSites
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+> 基于 [Astro](https://astro.build) + [Starlight](https://starlight.astro.build) 构建的文档站点模板。
 
-```
-pnpm create astro@latest -- --template starlight
-```
+## 技术栈
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Astro](https://img.shields.io/badge/Astro-v5-FF5D01?style=for-the-badge&logo=astro&logoColor=white&labelColor=1e3a5f)
+![Starlight](https://img.shields.io/badge/Starlight-v0.30-7C3AED?style=for-the-badge&logo=starlight&logoColor=white&labelColor=1e3a5f)
+![TypeScript](https://img.shields.io/badge/TypeScript-v7-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=1e3a5f)
+![pnpm](https://img.shields.io/badge/pnpm-v12-F69220?style=for-the-badge&logo=pnpm&logoColor=white&labelColor=1e3a5f)
 
-## 🚀 Project Structure
+## 项目说明
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+本站收录常用软件的官网，避免下载病毒软件感染电脑
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+## 参考资料
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- [Starlight 文档](https://starlight.astro.build)
+- [Astro 文档](https://docs.astro.build)

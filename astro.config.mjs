@@ -1,13 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightThemeGalaxy from 'starlight-theme-galaxy'
 
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
     starlight({
+      plugins: [starlightThemeGalaxy()],
       title: 'NTSites',
+      defaultLocale: 'root',
       locales: {
         root: {
           label: '简体中文',
