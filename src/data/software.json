@@ -1,8 +1,56 @@
 [
   {
+    "name": "7-Zip",
+    "url": "https://www.7-zip.org/",
+    "group": "7",
+    "type": "en"
+  },
+  {
+    "name": "AdGuard",
+    "url": "https://adguard.com/",
+    "group": "A",
+    "type": "en"
+  },
+  {
     "name": "Bandizip",
     "url": "https://www.bandisoft.com/bandizip/",
     "group": "B",
+    "type": "en"
+  },
+  {
+    "name": "Chrome",
+    "url": "https://www.google.com/chrome/",
+    "group": "C",
+    "type": "en"
+  },
+  {
+    "name": "CCleaner",
+    "url": "https://www.ccleaner.com/",
+    "group": "C",
+    "type": "en"
+  },
+  {
+    "name": "Discord",
+    "url": "https://discord.com/",
+    "group": "D",
+    "type": "en"
+  },
+  {
+    "name": "Edge",
+    "url": "https://www.microsoft.com/edge",
+    "group": "E",
+    "type": "en"
+  },
+  {
+    "name": "Everything",
+    "url": "https://www.voidtools.com/",
+    "group": "E",
+    "type": "en"
+  },
+  {
+    "name": "Firefox",
+    "url": "https://www.mozilla.org/firefox/",
+    "group": "F",
     "type": "en"
   },
   {
@@ -11,6 +59,7 @@
     "group": "G",
     "type": "en"
   },
+  { "name": "Git", "url": "https://git-scm.com/", "group": "G", "type": "en" },
   {
     "name": "Hibit Uninstaller",
     "url": "https://hibitsoft.ir/Uninstaller.html",
@@ -18,9 +67,93 @@
     "type": "en"
   },
   {
+    "name": "GitHub Desktop",
+    "url": "https://desktop.github.com/",
+    "group": "G",
+    "type": "en"
+  },
+  {
+    "name": "IDM",
+    "url": "https://www.internetdownloadmanager.com/",
+    "group": "I",
+    "type": "en"
+  },
+  {
+    "name": " LibreOffice",
+    "url": "https://www.libreoffice.org/",
+    "group": "L",
+    "type": "en"
+  },
+  {
+    "name": "MPC-HC",
+    "url": "https://mpc-hc.org/",
+    "group": "M",
+    "type": "en"
+  },
+  {
+    "name": "Notepad++",
+    "url": "https://notepad-plus-plus.org/",
+    "group": "N",
+    "type": "en"
+  },
+  {
+    "name": "Node.js",
+    "url": "https://nodejs.org/",
+    "group": "N",
+    "type": "en"
+  },
+  {
+    "name": "Obsidian",
+    "url": "https://obsidian.md/",
+    "group": "O",
+    "type": "en"
+  },
+  {
+    "name": "Opera",
+    "url": "https://www.opera.com/",
+    "group": "O",
+    "type": "en"
+  },
+  {
+    "name": "PotPlayer",
+    "url": "https://potplayer.daum.net/",
+    "group": "P",
+    "type": "en"
+  },
+  {
+    "name": "Python",
+    "url": "https://www.python.org/",
+    "group": "P",
+    "type": "en"
+  },
+  {
     "name": "QQ",
     "url": "https://im.qq.com/index/#/",
     "group": "Q",
+    "type": "en"
+  },
+  {
+    "name": "Steam",
+    "url": "https://store.steampowered.com/",
+    "group": "S",
+    "type": "en"
+  },
+  {
+    "name": "Speedtest",
+    "url": "https://www.speedtest.net/",
+    "group": "S",
+    "type": "en"
+  },
+  {
+    "name": "Telegram",
+    "url": "https://telegram.org/",
+    "group": "T",
+    "type": "en"
+  },
+  {
+    "name": "Visual Studio Code",
+    "url": "https://code.visualstudio.com/",
+    "group": "V",
     "type": "en"
   },
   {
@@ -45,6 +178,18 @@
     "name": "微信",
     "url": "https://weixin.qq.com/",
     "group": "W",
+    "type": "zh"
+  },
+  {
+    "name": "网易云音乐",
+    "url": "https://music.163.com/",
+    "group": "W",
+    "type": "zh"
+  },
+  {
+    "name": "有道词典",
+    "url": "https://www.youdao.com/",
+    "group": "Y",
     "type": "zh"
   }
 ]
