@@ -11,6 +11,7 @@ export default defineConfig({
     starlight({
       plugins: [starlightThemeGalaxy()],
       title: "NTSites",
+
       head: [
         {
           tag: "script",

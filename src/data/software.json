@@ -6,33 +6,9 @@
     "type": "en"
   },
   {
-    "name": "AdGuard",
-    "url": "https://adguard.com/",
-    "group": "A",
-    "type": "en"
-  },
-  {
     "name": "Bandizip",
     "url": "https://www.bandisoft.com/bandizip/",
     "group": "B",
-    "type": "en"
-  },
-  {
-    "name": "Chrome",
-    "url": "https://www.google.com/chrome/",
-    "group": "C",
-    "type": "en"
-  },
-  {
-    "name": "CCleaner",
-    "url": "https://www.ccleaner.com/",
-    "group": "C",
-    "type": "en"
-  },
-  {
-    "name": "Discord",
-    "url": "https://discord.com/",
-    "group": "D",
     "type": "en"
   },
   {
@@ -85,18 +61,6 @@
     "type": "en"
   },
   {
-    "name": "MPC-HC",
-    "url": "https://mpc-hc.org/",
-    "group": "M",
-    "type": "en"
-  },
-  {
-    "name": "Notepad++",
-    "url": "https://notepad-plus-plus.org/",
-    "group": "N",
-    "type": "en"
-  },
-  {
     "name": "Node.js",
     "url": "https://nodejs.org/",
     "group": "N",
@@ -136,18 +100,6 @@
     "name": "Steam",
     "url": "https://store.steampowered.com/",
     "group": "S",
-    "type": "en"
-  },
-  {
-    "name": "Speedtest",
-    "url": "https://www.speedtest.net/",
-    "group": "S",
-    "type": "en"
-  },
-  {
-    "name": "Telegram",
-    "url": "https://telegram.org/",
-    "group": "T",
     "type": "en"
   },
   {
