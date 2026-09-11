@@ -1,0 +1,69 @@
+---
+import { LinkCard } from "@astrojs/starlight/components";
+import softwareData from "../data/software.json";
+
+interface Software {
+  name: string;
+  url: string;
+  group: string;
+  type: "en" | "zh";
+}
+
+const software = softwareData as Software[];
+
+// 定义排序顺序：字母在前，数字在后
+const groupOrder = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+// 按 group 分组
+const grouped = new Map<string, Software[]>();
+for (const item of software) {
+  const group = item.group.toUpperCase();
+  if (!grouped.has(group)) {
+    grouped.set(group, []);
+  }
+  grouped.get(group)!.push(item);
+}
+
+// 组内排序：英文优先，中文按拼音排序
+const zhCollator = new Intl.Collator("zh-CN", {
+  collation: "pinyin",
+  sensitivity: "base",
+  numeric: true,
+});
+
+const sortedGroups = Array.from(grouped.entries()).sort(([a], [b]) => {
+  const indexA = groupOrder.indexOf(a);
+  const indexB = groupOrder.indexOf(b);
+  // 字母排在数字前面
+  const isLetterA = indexA < 26;
+  const isLetterB = indexB < 26;
+  if (isLetterA && !isLetterB) return -1;
+  if (!isLetterA && isLetterB) return 1;
+  return indexA - indexB;
+});
+
+// 对每个组内的软件排序
+for (const [, items] of sortedGroups) {
+  items.sort((a, b) => {
+    // 英文优先
+    if (a.type === "en" && b.type === "zh") return -1;
+    if (a.type === "zh" && b.type === "en") return 1;
+    // 同类型按名称排序
+    if (a.type === "en" && b.type === "en") {
+      return a.name.localeCompare(b.name);
+    }
+    return zhCollator.compare(a.name, b.name);
+  });
+}
+---
+
+{
+  sortedGroups.map(([group, items]) => (
+    <Fragment>
+      <h3>{group}</h3>
+      {items.map((item) => (
+        <LinkCard title={item.name} href={item.url} />
+      ))}
+    </Fragment>
+  ))
+}

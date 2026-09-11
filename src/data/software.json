@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Bandizip",
+    "url": "https://www.bandisoft.com/bandizip/",
+    "group": "B",
+    "type": "en"
+  },
+  {
+    "name": "Geek",
+    "url": "https://geekuninstaller.com/",
+    "group": "G",
+    "type": "en"
+  },
+  {
+    "name": "Hibit Uninstaller",
+    "url": "https://hibitsoft.ir/Uninstaller.html",
+    "group": "H",
+    "type": "en"
+  },
+  {
+    "name": "QQ",
+    "url": "https://im.qq.com/index/#/",
+    "group": "Q",
+    "type": "en"
+  },
+  {
+    "name": "360急救箱",
+    "url": "https://weishi.360.cn/jijiuxiang/index.html",
+    "group": "3",
+    "type": "zh"
+  },
+  {
+    "name": "卡巴斯基",
+    "url": "https://www.kaspersky.com.cn/",
+    "group": "K",
+    "type": "zh"
+  },
+  {
+    "name": "图吧工具箱",
+    "url": "https://www.tbtool.cn/",
+    "group": "T",
+    "type": "zh"
+  },
+  {
+    "name": "微信",
+    "url": "https://weixin.qq.com/",
+    "group": "W",
+    "type": "zh"
+  }
+]
