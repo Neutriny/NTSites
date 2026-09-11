@@ -11,9 +11,6 @@ interface Software {
 
 const software = softwareData as Software[];
 
-// 定义排序顺序：字母在前，数字在后
-const groupOrder = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
 // 按 group 分组
 const grouped = new Map<string, Software[]>();
 for (const item of software) {
@@ -31,39 +28,219 @@ const zhCollator = new Intl.Collator("zh-CN", {
   numeric: true,
 });
 
-const sortedGroups = Array.from(grouped.entries()).sort(([a], [b]) => {
-  const indexA = groupOrder.indexOf(a);
-  const indexB = groupOrder.indexOf(b);
-  // 字母排在数字前面
-  const isLetterA = indexA < 26;
-  const isLetterB = indexB < 26;
-  if (isLetterA && !isLetterB) return -1;
-  if (!isLetterA && isLetterB) return 1;
-  return indexA - indexB;
-});
-
-// 对每个组内的软件排序
-for (const [, items] of sortedGroups) {
+for (const [, items] of grouped) {
   items.sort((a, b) => {
-    // 英文优先
     if (a.type === "en" && b.type === "zh") return -1;
     if (a.type === "zh" && b.type === "en") return 1;
-    // 同类型按名称排序
     if (a.type === "en" && b.type === "en") {
       return a.name.localeCompare(b.name);
     }
     return zhCollator.compare(a.name, b.name);
   });
 }
+
+// 分离字母和数字
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const numbers = "0123456789".split("");
+
+// 获取有软件的分组
+const letterGroups = letters.filter((g) => grouped.has(g));
+const numberGroups = numbers.filter((g) => grouped.has(g));
 ---
 
-{
-  sortedGroups.map(([group, items]) => (
-    <Fragment>
-      <h3>{group}</h3>
-      {items.map((item) => (
-        <LinkCard title={item.name} href={item.url} />
-      ))}
-    </Fragment>
-  ))
-}
+<div class="software-index">
+  <nav class="index-nav" aria-label="字母数字索引">
+    <div class="nav-section">
+      <span class="nav-label">A-Z</span>
+      <div class="nav-items">
+        {
+          letters.map((g) => (
+            <a
+              href={`#group-${g}`}
+              class:list={["nav-item", { active: grouped.has(g) }]}
+              aria-disabled={!grouped.has(g)}
+            >
+              {g}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="nav-section">
+      <span class="nav-label">0-9</span>
+      <div class="nav-items">
+        {
+          numbers.map((g) => (
+            <a
+              href={`#group-${g}`}
+              class:list={["nav-item", { active: grouped.has(g) }]}
+              aria-disabled={!grouped.has(g)}
+            >
+              {g}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+
+  <div class="index-content">
+    {
+      letterGroups.length > 0 && (
+        <section class="group-section">
+          <h2>字母</h2>
+          {letterGroups.map((group) => (
+            <div id={`group-${group}`} class="group-block">
+              <h3>{group}</h3>
+              {grouped.get(group)!.map((item) => (
+                <LinkCard title={item.name} href={item.url} />
+              ))}
+            </div>
+          ))}
+        </section>
+      )
+    }
+
+    {
+      numberGroups.length > 0 && (
+        <section class="group-section">
+          <h2>数字</h2>
+          {numberGroups.map((group) => (
+            <div id={`group-${group}`} class="group-block">
+              <h3>{group}</h3>
+              {grouped.get(group)!.map((item) => (
+                <LinkCard title={item.name} href={item.url} />
+              ))}
+            </div>
+          ))}
+        </section>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .software-index {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .index-nav {
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    flex-shrink: 0;
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .nav-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-3);
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--sl-color-gray-4);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease;
+  }
+
+  .nav-item.active {
+    color: var(--sl-color-gray-2);
+    cursor: pointer;
+  }
+
+  .nav-item.active:hover {
+    background-color: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+  }
+
+  .nav-item[aria-disabled="true"] {
+    color: var(--sl-color-gray-6);
+    cursor: not-allowed;
+  }
+
+  .index-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .group-section {
+    margin-bottom: 2rem;
+  }
+
+  .group-section > h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sl-color-white);
+    border-bottom: 1px solid var(--sl-color-gray-5);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .group-block {
+    margin-bottom: 1.5rem;
+  }
+
+  .group-block > h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-2);
+    margin-bottom: 0.75rem;
+    scroll-margin-top: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .software-index {
+      flex-direction: column;
+    }
+
+    .index-nav {
+      position: fixed;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      z-index: 10;
+    }
+
+    .nav-items {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-item {
+      width: 1.25rem;
+      height: 1.25rem;
+      font-size: 0.625rem;
+    }
+  }
+</style>
