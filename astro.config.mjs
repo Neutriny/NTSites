@@ -11,6 +11,19 @@ export default defineConfig({
     starlight({
       plugins: [starlightThemeGalaxy()],
       title: "NTSites",
+      head: [
+        {
+          tag: "script",
+          content: `document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('a[href^="http"]').forEach((link) => {
+              if (!link.getAttribute("href")?.includes(location.hostname)) {
+                link.setAttribute("target", "_blank");
+                link.setAttribute("rel", "noopener noreferrer");
+              }
+            });
+          });`,
+        },
+      ],
       defaultLocale: "root",
       locales: {
         root: {
