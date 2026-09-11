@@ -61,8 +61,20 @@
     "type": "en"
   },
   {
+    "name": "Kaspersky[卡巴斯基]",
+    "url": "https://www.kaspersky.com.cn/",
+    "group": "K",
+    "type": "en"
+  },
+  {
     "name": "Node.js",
     "url": "https://nodejs.org/zh-cn",
+    "group": "N",
+    "type": "en"
+  },
+  {
+    "name": "Notepad3",
+    "url": "https://github.com/rizonesoft/Notepad3",
     "group": "N",
     "type": "en"
   },
@@ -109,7 +121,7 @@
     "type": "en"
   },
   {
-    "name": "UU 远程",
+    "name": "UU远程",
     "url": "https://uuyc.163.com/",
     "group": "U",
     "type": "en"
@@ -119,12 +131,6 @@
     "url": "https://code.visualstudio.com/",
     "group": "V",
     "type": "en"
-  },
-  {
-    "name": "Kaspersky 卡巴斯基",
-    "url": "https://www.kaspersky.com.cn/",
-    "group": "K",
-    "type": "zh"
   },
   {
     "name": "剪映",
