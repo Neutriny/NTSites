@@ -5,7 +5,8 @@ import starlightThemeGalaxy from "starlight-theme-galaxy";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://neutriny.github.io/NTSites",
+  site: "https://neutriny.github.io",
+  base: "/NTSites",
   integrations: [
     starlight({
       plugins: [starlightThemeGalaxy()],
