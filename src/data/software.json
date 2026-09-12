@@ -1,5 +1,11 @@
 [
   {
+    "name": "7-Zip",
+    "url": "https://www.7-zip.org/",
+    "group": "7",
+    "type": "en"
+  },
+  {
     "name": "AffinityCN",
     "url": "https://www.canva.cn/affinity",
     "group": "A",
