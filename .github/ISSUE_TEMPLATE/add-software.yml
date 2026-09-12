@@ -1,0 +1,49 @@
+name: "\U0001F4E6 \u6DFB\u52A0\u8F6F\u4EF6"
+description: "\u6DFB\u52A0\u65B0\u7684\u8F6F\u4EF6\u5B98\u7F51\u94FE\u63A5"
+labels: ["\u65B0\u589E\u8F6F\u4EF6"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: "\u8F6F\u4EF6\u540D\u79F0"
+      description: "\u8F6F\u4EF6\u7684\u663E\u793A\u540D\u79F0"
+      placeholder: "e.g. Firefox"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: "\u5B98\u7F51\u5730\u5740"
+      description: "\u8F6F\u4EF6\u7684\u5B98\u65B9\u7F51\u7AD9 URL"
+      placeholder: "https://www.firefox.com/"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: "\u540D\u79F0\u7C7B\u578B"
+      description: "\u8F6F\u4EF6\u540D\u79F0\u662F\u82F1\u6587\u8FD8\u662F\u4E2D\u6587"
+      options:
+        - "\u82F1\u6587 (en)"
+        - "\u4E2D\u6587 (zh)"
+    validations:
+      required: true
+
+  - type: input
+    id: group
+    attributes:
+      label: "\u5206\u7EC4\u9996\u5B57\u6BCD"
+      description: "\u6839\u636E\u8F6F\u4EF6\u540D\u79F0\u7684\u9996\u4E2A\u5B57\u7B26\u586B\u5199\uFF08A-Z \u6216 0-9\uFF09\uFF0C\u7559\u7A7A\u5219\u81EA\u52A8\u53D6\u540D\u79F0\u9996\u5B57\u7B26"
+      placeholder: "e.g. F"
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: "\u5907\u6CE8"
+      description: "\u5176\u4ED6\u8BF4\u660E\uFF08\u53EF\u9009\uFF09"
+    validations:
+      required: false
